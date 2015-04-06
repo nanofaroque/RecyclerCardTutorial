@@ -3,12 +3,12 @@ package tutorial.card.recycler.nanofaroque.com.recyclercardtutorial;
 /**
  * Created by ofaro on 4/3/2015.
  */
-public class PlaceInformation {
+public class PersonInformation {
     private String name;
     private String phone;
     private int img;
 
-    public PlaceInformation(String name, String phone, int img) {
+    public PersonInformation(String name, String phone, int img) {
         this.name = name;
         this.phone = phone;
         this.img = img;

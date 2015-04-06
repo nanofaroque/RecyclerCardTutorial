@@ -2,7 +2,6 @@ package tutorial.card.recycler.nanofaroque.com.recyclercardtutorial;
 
 import android.animation.AnimatorInflater;
 import android.animation.StateListAnimator;
-import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,42 +15,51 @@ import java.util.ArrayList;
 /**
  * Created by ofaro on 4/3/2015.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PlaceInfoHolder> {
-    private ArrayList<PlaceInformation> placeInformations;
+//has to extend RecylerView.Adapter<YourAdapterName.YourDataHolderName>
+//in my case PersonInfoHolder is the data holder class
+//in this adapter, you have to implement two methods:
+//onCreateViewHolder--> to Create the view from your child view layout file
+// return the data holder object(PersonInfoHolder).
+//do not forget to create the PersonInfoHolder object by using child view
 
-    public MyAdapter(ArrayList<PlaceInformation> placeInformations) {
-        this.placeInformations = placeInformations;
+//onBindViewHolder-->
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.PersonInfoHolder> {
+    
+    private ArrayList<PersonInformation> personInformations;
+
+    public MyAdapter(ArrayList<PersonInformation> placeInformations) {
+        this.personInformations = placeInformations;
     }
 
     @Override
-    public PlaceInfoHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public PersonInfoHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         /* creating view from the layout for child element in the listview by using inflater*/
         View itemView= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view,viewGroup,false);
         /*returning the new placeholder with the view*/
-        return new PlaceInfoHolder(itemView);
+        return new PersonInfoHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(PlaceInfoHolder placeInfoHolder, int i) {
+    public void onBindViewHolder(PersonInfoHolder personInfoHolder, int i) {
         //getting the place information from the list
-        PlaceInformation placeInformation=placeInformations.get(i);
-        placeInfoHolder.tvName.setText(placeInformation.getName());
-        placeInfoHolder.tvPhone.setText(placeInformation.getPhone());
-        placeInfoHolder.img.setImageResource(placeInformation.getImg());
+        PersonInformation placeInformation= personInformations.get(i);
+        personInfoHolder.tvName.setText(placeInformation.getName());
+        personInfoHolder.tvPhone.setText(placeInformation.getPhone());
+        personInfoHolder.img.setImageResource(placeInformation.getImg());
 
     }
 
     @Override
     public int getItemCount() {
-        return placeInformations.size();
+        return personInformations.size();
     }
 
-    public class PlaceInfoHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class PersonInfoHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         protected TextView tvName;
         protected TextView tvPhone;
         protected ImageView img;
 
-        public PlaceInfoHolder(View itemView) {
+        public PersonInfoHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             tvName=(TextView)itemView.findViewById(R.id.name);

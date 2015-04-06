@@ -8,11 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
-    ArrayList<PlaceInformation> placeList;
+    ArrayList<PersonInformation> placeList;
 
 
     private Integer[] imgid = {
@@ -44,19 +43,19 @@ public class MainActivity extends ActionBarActivity {
         recyclerView.setAdapter(myAdapter);
     }
 
-    private ArrayList<PlaceInformation> createList() {
-        ArrayList<PlaceInformation> places=new ArrayList<>();
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[0]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[1]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[2]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[3]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[4]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[5]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[6]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[7]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[8]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[9]));
-        places.add(new PlaceInformation("Md Omar Faroque","872-888-2069",imgid[10]));
+    private ArrayList<PersonInformation> createList() {
+        ArrayList<PersonInformation> places=new ArrayList<>();
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[0]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[1]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[2]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[3]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[4]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[5]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[6]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[7]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[8]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[9]));
+        places.add(new PersonInformation("Md Omar Faroque","871-000-0000",imgid[10]));
         return places;
 
     }
